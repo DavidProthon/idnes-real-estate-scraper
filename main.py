@@ -61,7 +61,7 @@ template = {
     "Čas uložení": datetime.datetime.now().strftime("%d.%m.%Y") 
 }
 
-if __name__ == "__main__":
+def main():
     for city in list_of_cities:
         for action in actions:
             start_url = f"https://reality.idnes.cz/s/{action}/{property_type}/{city}/?page="
@@ -80,3 +80,6 @@ if __name__ == "__main__":
             engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}")
             df.to_sql(f"{city}_{property_type}_{action}", engine, if_exists = "append", index = False)
             print(f"{city}_{property_type}_{action} saved")
+
+if __name__ == "__main__":
+    main()
