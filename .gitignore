@@ -1,0 +1,4 @@
+/venv
+/zaloha
+.env
+selector.py
