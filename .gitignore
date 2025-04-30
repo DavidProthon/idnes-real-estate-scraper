@@ -2,3 +2,4 @@
 /zaloha
 .env
 selector.py
+__pycache__/
